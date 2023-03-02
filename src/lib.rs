@@ -5,13 +5,11 @@ pub use error::*;
 macro_rules! ensure {
     ($cond:expr $(,)?) => {{
         use anyhow::ensure;
-        use $crate::error_msg;
-        ensure!(*left_val == *right_val, error_msg("!=", &*left_val, &*right_val, None));
+        ensure!($cond, None);
     }};
     ($cond:expr, $($arg:tt)+) => {{
         use anyhow::ensure;
-        use $crate::error_msg;
-        ensure!(*left_val == *right_val, error_msg("==", &*left_val, &*right_val, Some(format_args!($($arg)+))));
+        ensure!($cond, None);
     }};
 }
 
