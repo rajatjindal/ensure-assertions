@@ -1,0 +1,12 @@
+[package]
+name = "ensure-assertions"
+version = "0.1.0"
+edition = "2021"
+description = "soft assertions"
+license-file = "LICENSE.txt"
+
+[lib]
+doctest = false
+
+[dependencies]
+anyhow = "1.0"
